@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PERFIL ADMINISTRADOR{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1>Perfil Administrador</h1>
+            </div>
+            <div class=" col-lg-offset-3 col-md-6 col-lg-offset-3 ">
+                {{ form_start(formulario) }}
+                {{ form_row(formulario.nombre) }}
+                {{ form_row(formulario.apellido) }}
+                {{ form_row(formulario.cedula) }}
+                {{ form_row(formulario.email) }}
+                {{ form_row(formulario.user) }}
+                {{ form_row(formulario.password) }}
+                <button type="submit" class="btn btn-primary">Registrarme</button>
+                {{ form_end(formulario) }}
+                <a href="{{ path('verPerfil') }}">Nuevo</a>
+
+
+            </div>
+        </div>
+    </div>
+{% endblock body %}

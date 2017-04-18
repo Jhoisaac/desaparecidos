@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+{% block title %}Encargado organizacion{% endblock title%}
+
+{% block body %}
+
+    <div class="container-fluid1">
+        <div class="row col-md-12">
+            <div class="col-sm-3 col-md-3 sidebar">
+                <h3 class="page-header" >{% block titulo %}<span class="glyphicon glyphicon-info-sign"> Informacion</span>{% endblock %}</h3>
+
+            </div>
+            <h3 class="page-header" >{% block titulo4 %} &nbsp &nbsp &nbsp &nbspPerfil de Encargado{% endblock %}</h3>
+            <div class="col-sm-9  col-md-3 ">
+                <div class="table-responsive">
+                    <table class="table"  style="width:100%;">
+
+                        <tr>
+                            <div><center><img src="{{ asset('images/admin.png') }}" alt=""></center></div></td>
+
+                        </tr>
+                        <br>
+                        <tr style="text-align: center">
+                            <td>Juan Carlos Taboada</td>
+
+                        </tr>
+
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-5">
+                ..........
+                <table id="#CategoriasTable" class="table table-striped">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Cantidad de Promociones</th>
+                    </tr>
+                    {%  for prof in Profesores %}
+                        <tr>
+                            <td>{{ loop.index }}</td>
+                            <td>{{ prof.nomProf}}</td>
+                            <td><a href="{{ path('profesoredit',{'idUser':prof.id}) }}">Editar</a></td>
+                            <td><a href="{{ path('profesordelete',{'idUser':prof.id}) }}">Eliminar</a></td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                ..........
+                <div class="table-responsive">
+                    <table class="table" style="width:100%;">
+
+                        <tr>
+                            <td class="success">Nombre:</td>
+                            <td class="active">Juan Carlos</td>
+                        </tr>
+                        <tr >
+                            <td class="success">Apellido:</td>
+                            <td class="active">Taboada</td>
+                        </tr>
+                        <tr>
+                            <td class="success">Cedula:</td>
+                            <td class="active">1723205690</td>
+                        </tr>
+                        <tr>
+                            <td class="success">Email:</td>
+                            <td class="active">Juan@hotmail.com</td>
+                        </tr>
+                        <tr>
+                            <td class="success">Usuario:</td>
+                            <td class="active">Juan1231</td>
+                        </tr>
+                        <tr>
+                            <td class="success">Contraseña:</td>
+                            <td class="active">**********</td>
+                        </tr>
+
+
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock body %}

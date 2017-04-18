@@ -1,0 +1,104 @@
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card" style="transform: translate3d(0px, 0px, 0px); opacity: 1;">
+                <div class="header">
+                    <h4 class="title">Lista de Usuarios Familiares Registrados</h4>
+                    <p class="category">Here is a subtitle for this table</p>
+                </div>
+                <div class="content table-responsive table-full-width">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <th>Nro</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Cedula</th>
+                        <th>Fecha Nacimiento</th>
+                        <th>Telefono</th>
+                        <th>Celular</th>
+                        <th>Rol</th>
+                        <th>Email</th>
+                        <th>Acciones</th>
+                        </thead>
+                        <tbody>
+
+                        {% set nro = 1 %}
+                        {%  for usuario in usuarios %}
+                            {% if 'ROLE_FAMILIAR' in usuario.roles %}
+                                <tr>
+                                    <td>{{ nro }}</td>
+                                    <td>{{ usuario.nombre}}</td>
+                                    <td>{{ usuario.apellido}}</td>
+                                    <td>{{ usuario.cedula}}</td>
+                                    <td>{{ usuario.fchNaci.format('Y-m-d') }}</td>
+                                    <td>{{ usuario.telefono}}</td>
+                                    <td>{{ usuario.celular}}</td>
+                                    <td>{{ usuario.roles | join }}</td>
+                                    <td>{{ usuario.email}}</td>
+                                    <td>
+                                        <a familiar_id = "{{ usuario.id }}" href="#">Eliminar</a>
+                                    </td>
+                                    <td>
+                                        <a href="#">Ver</a>
+                                    </td>
+                                </tr>
+                                {% set nro = nro + 1 %}
+                            {% endif %}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card" style="transform: translate3d(0px, 0px, 0px); opacity: 1;">
+                <div class="header">
+                    <h4 class="title">Lista de Usuarios Encargados Registrados</h4>
+                    <p class="category">Here is a subtitle for this table</p>
+                </div>
+                <div class="content table-responsive table-full-width">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                            <th>Nro</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Cedula</th>
+                            <th>Fecha Nacimiento</th>
+                            <th>Telefono</th>
+                            <th>Celular</th>
+                            <th>Rol</th>
+                            <th>Email</th>
+                            <th>Acciones</th>
+                        </thead>
+                        <tbody>
+
+                        {% set nro = 1 %}
+                        {%  for usuario in usuarios %}
+                            {% if 'ROLE_ENCARGADO' in usuario.roles %}
+                                <tr>
+                                    <td>{{ nro }}</td>
+                                    <td>{{ usuario.nombre}}</td>
+                                    <td>{{ usuario.apellido}}</td>
+                                    <td>{{ usuario.cedula}}</td>
+                                    <td>{{ usuario.fchNaci.format('Y-m-d') }}</td>
+                                    <td>{{ usuario.telefono}}</td>
+                                    <td>{{ usuario.celular}}</td>
+                                    <td>{{ usuario.roles | join }}</td>
+                                    <td>{{ usuario.email}}</td>
+                                    <td>
+                                        <a encargado_id = "{{ usuario.id }}" href="#">Eliminar</a>
+                                    </td>
+                                </tr>
+                                {% set nro = nro + 1 %}
+                            {% endif %}
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

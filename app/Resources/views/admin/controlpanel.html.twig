@@ -1,0 +1,178 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Administracion {% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/light-bootstrap-dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/demo.css') }}">
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('fonts/fonts/fonts-googleapis-roboto.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/pe-icon-7-stroke.css') }}">
+
+{% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        <div class="sidebar" data-color="black" data-image="">
+            <div class="sidebar-wrapper">
+                <div class="logo">
+                    <a class="simple-text" href="#">
+                        <div class="logo-img">
+                            <img src="{{ asset('images/admins.png') }}">
+                        </div>
+                        Administrador
+                    </a>
+                </div>
+
+                <ul class="nav">
+                    <li class="active">
+                        <a id="cambiar" href="{{ path('admin_inicio') }}" value="1">
+                            <i class="pe-7s-graph"></i>
+                            <p>Dashboard</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('admin_perfil') }}" value="2">
+                            <i class="pe-7s-user"></i>
+                            <p>Mi Perfil</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="cambiar" href="#" value="3">
+                            <i class="pe-7s-note2"></i>
+                            <p>Organizaciones</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="cambiar" href="#" value="4">
+                            <i class="pe-7s-news-paper"></i>
+                            <p>Usuarios</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="cambiar" href="#" value="5">
+                            <i class="pe-7s-science"></i>
+                            <p>Desaparecidos</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="cambiar" href="#" value="6">
+                            <i class="pe-7s-map-marker"></i>
+                            <p>Mapa</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="cambiar" href="#" value="7">
+                            <i class="pe-7s-bell"></i>
+                            <p>Solicitudes</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a id="cambiar" href="#" value="7">
+                            <i class="pe-7s-bell"></i>
+                            <p>Generalidades</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <nav id="content" class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" data-target="#navigation-example-2" data-toggle="collapse" type="button">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Dashboard</a>
+                    </div>
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-dashboard"></i>
+                                    <p class="hidden-lg hidden-md">Dashboard</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-globe"></i>
+                                    <b class="caret"></b>
+                                    <span class="notification hidden-sm hidden-xs">5</span>
+                                    <p class="hidden-lg hidden-md">
+                                        5 Notifications
+                                        <b class="caret"></b>
+                                    </p>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Notification 1</a></li>
+                                    <li><a href="#">Notification 2</a></li>
+                                    <li><a href="#">Notification 3</a></li>
+                                    <li><a href="#">Notification 4</a></li>
+                                    <li><a href="#">Another notification</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-search"></i>
+                                    <p class="hidden-lg hidden-md">Search</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="#">
+                                    <p>Cuenta</p>
+                                </a>
+                            </li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <p>
+                                        Dropdown
+                                        <b class="caret"></b>
+                                    </p>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <p>Salir</p>
+                                </a>
+                            </li>
+                            <li class="separator hidden-lg hidden-md"></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            {% block content %}
+                <div id="maincontent">
+                    {% include 'admin/dashboard.html.twig' %}
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+
+    {% block javascripts %}
+        {{ parent() }}
+
+        <script src="{{ asset('vendor/bootstrap/js/bootstrap-checkbox-radio-switch.js') }}"></script>
+        <script src="{{ asset('js/chartist.js') }}"></script>
+        <script src="{{ asset('vendor/bootstrap/js/bootstrap-notify.js') }}"></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBpWBlQCzcc-sg9LLZKKKhKOt91tXOYQb8"></script>
+
+    {% endblock %}
+
+{% endblock %}

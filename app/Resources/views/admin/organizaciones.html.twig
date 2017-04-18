@@ -1,0 +1,48 @@
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card" style="transform: translate3d(0px, 0px, 0px); opacity: 1;">
+                <div class="header">
+                    <h4 class="title">Lista de Organizaciones Registradas</h4>
+                    <p class="category">Here is a subtitle for this table</p>
+                </div>
+                <div class="content table-responsive table-full-width">
+                    <table class="table table-hover table-striped">
+                        <thead>
+                        <th>Nro</th>
+                        <th>Nombre
+                        <th>Tipo</th>
+                        <th>Ubicación</th>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                        <th>Fecha de Ingreso</th>
+                        <th>Encargado</th>
+                        <th>Acciones</th>
+                        </thead>
+                        <tbody>
+
+                        {%  for organizacion in organizaciones %}
+                            {% if(organizacion.estado) %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ organizacion.nombre}}</td>
+                                <td>{{ organizacion.tipoOrg }}</td>
+                                <td>{{ organizacion.ubicacion}}</td>
+                                <td>{{ organizacion.telefono}}</td>
+                                <td>{{ organizacion.email}}</td>
+                                <td>{{ organizacion.fechaIngreso.format('Y-m-d') }}</td>
+                                <td>{{ organizacion.getRolxusuraio()}}</td>
+                                <td id="actualizar_organiz">
+                                    <a id="delete_organiz" organiz_id="{{ organizacion.id }}" href="#">Eliminar</a>
+                                </td>
+                            </tr>
+                            {% endif %}
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

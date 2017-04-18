@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registro{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/datepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('js/datepicker.js') }}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/datepicker.min.js') }}"></script>
+
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Nuevo Registro</h1>
+        </div>
+
+        <div class=" col-lg-offset-3 col-md-6 col-lg-offset-3 ">
+            {{ form_start(formulario) }}
+                {{ form_row(formulario.nombre) }}
+                {{ form_row(formulario.apellido) }}
+                {{ form_row(formulario.cedula) }}
+                {{ form_row(formulario.fchNaci, {
+                    'label': 'Fecha de Nacimiento'
+                }) }}
+                {{ form_row(formulario.telefono) }}
+                {{ form_row(formulario.celular) }}
+                <div>
+                    {{ form_widget(formulario.foto) }}
+                    <span><p class="alert-info">Tamaño máximo: 500 KB. Formato preferido: JPEG.</p></span>
+                </div>
+
+                {{ form_row(formulario.rol) }}
+                <div id="ver_organiz" class="hidden">
+                    {{ form_row(formulario.organiz, {
+                        'label': 'Organizacion'
+                    }) }}
+                    <div id="borrar" class="hidden">
+                        <span id="error"></span>
+                    </div>
+                </div>
+                {{ form_row(formulario.email) }}
+                {{ form_row(formulario.plainPassword.first, {
+                    'label': 'Contraseña'
+                }) }}
+                {{ form_row(formulario.plainPassword.second, {
+                    'label': 'Verificar Contraseña'
+                }) }}
+
+            <button id="register" type="submit" class="btn btn-primary" formnovalidate>Registrarme</button>
+            {{ form_end(formulario) }}
+        </div>
+    </div>
+ </div>
+{% endblock %}

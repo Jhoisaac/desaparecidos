@@ -1,0 +1,154 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Ingreso Desaparecidos {% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/datepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/datepicker.min.js') }}"></script>
+
+{% endblock %}
+
+{% block body %}
+
+
+    <div class="container-fluid1">
+        <div class="row">
+            <div class="col-sm-5 col-md-3 sidebar">
+                <div class="col-lg-offset-1 col-md-10 col-lg-offset-3">
+
+
+                    <h3 class="page-header" >{% block titulo %}<span class="glyphicon glyphicon-info-sign"> Información</span>{% endblock %}</h3>
+                    <ul class="nav nav-sidebar">
+                        <li class="{% block m1%} {% endblock %}"><a href="{{ path('user_perfil') }}"><span class="glyphicon glyphicon-user"> Mi Perfil</span></a></li>
+                        <li class="{% block m2%} {% endblock %}"><a href="{{ path('user_edit') }}"><span class="glyphicon glyphicon-user"> Editar Perfil</span></a></li>
+                        <li class="{% block m3%} {% endblock %}"><a href="{{ path('user_listar') }}" ><span class="glyphicon glyphicon-list"> Mis Solicitud</span></a></li>
+                        <li class="{% block m4%} {% endblock %}"><a href="{{ path('user_solicitud') }}" ><span class="glyphicon glyphicon-list"> Nueva Solicitud</span></a></li>
+                        <li class="{% block m5%} {% endblock %}"><a href="{{ path('user_buscar') }}" ><span class="glyphicon glyphicon-search"> Buscar</span></a></li>
+                        <li class="{% block m6%} {% endblock %}"><a href="{{ path('desaparecido_register') }}" ><span class="glyphicon glyphicon-search"> Reportar</span></a></li>
+                        <li class="{% block m7%} {% endblock %}"><a href="{{ path('all_preguntas') }}" ><span class="glyphicon glyphicon-search"> Preguntas Frecuentes </span></a></li>
+                        <li class="{% block m8%} {% endblock %}"><a href="{{ path('all_contactos') }}" ><span class="glyphicon glyphicon-search"> Contactos</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-offset-1 col-md-5 col-lg-offset-7 ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Registro de Desaparecido</b></h1>
+                            <br>
+                            <br>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                {{ form_start(formulariod) }}
+                                {{ form_row(formulariod.nombre) }}
+                                {{ form_row(formulariod.apellido) }}
+                                {{ form_row(formulariod.estado_civil) }}
+
+                                <div>
+                                    {#{% if formulariod.path.vars.value == 'Desaparecidos/' %}#}
+                                    {#<img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Sin foto"><br><br><br>#}
+                                    {#{% else %}#}
+                                    {#<img src="{{  asset(formulariod.path.vars.value) }}" width="200" height="200" class="img-responsive" alt="Sin foto"><br><br><br>#}
+                                    {#{% endif %}#}
+                                    {{ form_widget(formulariod.foto) }}
+                                    {{ form_errors(formulariod.foto) }}
+                                </div>
+                                <br>
+                                {{ form_row(formulariod.edad) }}
+                                {{ form_row(formulariod.cedula) }}
+                                {{ form_row(formulariod.genero) }}
+                                {{ form_row(formulariod.altura) }}
+                            </div>
+                            <div class="col-md-4">
+                                {{ form_row(formulariod.fecha_ingreso) }}
+                                {{ form_row(formulariod.fecha_lost) }}
+                                {{ form_row(formulariod.estado) }}
+                                {{ form_row(formulariod.contextura) }}
+                                {{ form_row(formulariod.color_piel) }}
+                                {{ form_row(formulariod.color_cabello) }}
+                                {{ form_row(formulariod.color_ojos) }}
+                                {{ form_row(formulariod.largo_cabello) }}
+                            </div>
+                            <div class="col-md-4">
+                                {{ form_row(formulariod.contextura_cabello) }}
+                                {{ form_row(formulariod.forma_cara) }}
+                                {{ form_row(formulariod.forma_nariz) }}
+                                {{ form_row(formulariod.forma_ojos) }}
+                                {{ form_row(formulariod.forma_labios) }}
+                                {{ form_row(formulariod.barba) }}
+                                {{ form_row(formulariod.bigote) }}
+
+                                <button type="submit" class="btn btn-primary">Registrar</button>
+                                {{ form_end(formulariod) }}
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+
+
+                        {#<div class=" col-lg-offset-3 col-md-6 col-lg-offset-3 ">#}
+
+                        {#{{ form_start(formulariod) }}#}
+                        {#{{ form_row(formulariod.nombre) }}#}
+                        {#{{ form_row(formulariod.apellido) }}#}
+                        {#{{ form_row(formulariod.estado_civil) }}#}
+
+                        {#<div>#}
+                        {#{% if formulariod.path.vars.value == 'Desaparecidos/' %}#}
+                        {#<img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Sin foto"><br><br><br>#}
+                        {#{% else %}#}
+                        {#<img src="{{  asset(formulariod.path.vars.value) }}" width="200" height="200" class="img-responsive" alt="Sin foto"><br><br><br>#}
+                        {#{% endif %}#}
+                        {#{{ form_widget(formulariod.foto) }}#}
+                        {#{{ form_errors(formulariod.foto) }}#}
+                        {#</div>#}
+                        {#<br>#}
+                        {#{{ form_row(formulariod.edad) }}#}
+                        {#{{ form_row(formulariod.cedula) }}#}
+                        {#{{ form_row(formulariod.genero) }}#}
+                        {#{{ form_row(formulariod.altura) }}#}
+                        {#{{ form_row(formulariod.fecha_ingreso) }}#}
+                        {#{{ form_row(formulariod.fecha_lost) }}#}
+                        {#{{ form_row(formulariod.estado) }}#}
+                        {#{{ form_row(formulariod.contextura) }}#}
+                        {#{{ form_row(formulariod.color_piel) }}#}
+                        {#{{ form_row(formulariod.color_cabello) }}#}
+                        {#{{ form_row(formulariod.color_ojos) }}#}
+                        {#{{ form_row(formulariod.largo_cabello) }}#}
+                        {#{{ form_row(formulariod.contextura_cabello) }}#}
+                        {#{{ form_row(formulariod.forma_cara) }}#}
+                        {#{{ form_row(formulariod.forma_nariz) }}#}
+                        {#{{ form_row(formulariod.forma_ojos) }}#}
+                        {#{{ form_row(formulariod.forma_labios) }}#}
+                        {#{{ form_row(formulariod.barba) }}#}
+                        {#{{ form_row(formulariod.bigote) }}#}
+
+                        {#<button type="submit" class="btn btn-primary">Registrar</button>#}
+                        {#{{ form_end(formulariod) }}#}
+                        {#<br>#}
+                        {#<br>#}
+                        {#</div>#}
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+{% endblock %}

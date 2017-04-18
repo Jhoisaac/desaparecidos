@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Administrar organización{% endblock title%}
+
+{% block body %}
+
+
+    <div class="container-fluid1">
+    <div class="row col-md-12">
+    <div class="col-sm-3 col-md-3 sidebar">
+        <h3 class="page-header" >{% block titulo %}<span class="glyphicon glyphicon-info-sign"> Informacion</span>{% endblock %}</h3>
+        <ul class="nav nav-sidebar">
+
+            <li class="{% block m1%} {% endblock %}"><a href="{{ path('index') }}"><span class="glyphicon glyphicon-home"> Inicio</span></a></li>
+            <li class="{% block m2%} {% endblock %}"><a href="{{ path('admin_perfil') }}" ><span class="glyphicon glyphicon-user"> Perfil Usuario</span></a></li>
+            <li class="{% block m3%} {% endblock %}"><a href="{{ path('admin_organizacion') }}" ><span class="glyphicon glyphicon-list"> Control Organizaciones</span></a></li>
+        </ul>
+    </div>
+    <h3 class="page-header" >{% block titulo4 %} &nbsp &nbsp &nbsp Administrar Organizaciones{% endblock %}</h3>
+     <div class="col-md-9">
+              <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+              </form>
+         <br> <br> <br><br>
+         <div class="table-responsive">
+
+             <table  class="table">
+                 <thead>
+                 <tr class="success">
+                     <th>#</th>
+                     <th>Nombre Organización</th>
+                     <th>Tipo</th>
+                     <th>Ubicación</th>
+                     <th>Telefono</th>
+                     <th>Email</th>
+                     <th>Nombre Encargado</th>
+                     <th>Accion</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr>
+                     <th scope="row">1</th>
+                     <td>Hospital Pablo Arturo Suárez</td>
+                     <td>Hospital</td>
+                     <td>Ángel Ludeña, Quito, Ecuador</td>
+                     <td>2-397-9300</td>
+                     <td>info@hpas.gob.ec</td>
+                     <td>Marco Benitez</td>
+                     <td>
+                         <a class="blue-text"><i class="fa fa-user"></i></a>
+                         <a class="teal-text"><i class="fa fa-pencil"></i></a>
+                         <a data-toggle="modal" href="#eliminarOrg" class="red-text"><i class="fa fa-times"></i></a>
+
+
+                         </td>
+                 </tr>
+                 <tr>
+                     <th scope="row">2</th>
+                     <td>Medicina legal Policia del Ecuador</td>
+                     <td>Morgue</td>
+                     <td>Benalcázar N4-24 y Espejo </td>
+                     <td>2 295-5666</td>
+                     <td>infomorgueQuito@hpas.gob.ec</td>
+                     <td>Mauricio Romero</td>
+                     <td>
+                         <a class="blue-text"><i class="fa fa-user"></i></a>
+                         <a class="teal-text"><i class="fa fa-pencil"></i></a>
+                         <a data-toggle="modal" href="#eliminarOrg" class="red-text"><i class="fa fa-times"></i></a>
+                     </td>
+                 </tr>
+                 <tr>
+                     <th scope="row">3</th>
+                     <td>Hospital Del Sur</td>
+                     <td>Hospital</td>
+                     <td>Av Enrique Garcés, Quito EC170131, Ecuador</td>
+                     <td>2-266-0252</td>
+                     <td>infohospitalSur@hpas.gob.ec</td>
+                     <td>Fausto Guerrero</td>
+                     <td>
+                         <a class="blue-text"><i class="fa fa-user"></i></a>
+                         <a class="teal-text"><i class="fa fa-pencil"></i></a>
+                         <a data-toggle="modal" href="#eliminarOrg" class="red-text"><i class="fa fa-times"></i></a>
+                     </td>
+                 </tr>
+
+                 </tbody>
+             </table>
+
+         </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Formulario Login -->
+    {{ include (':modalsAction:EliminarOrganizacion.html.twig') }}
+
+{% endblock body %}

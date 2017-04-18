@@ -1,0 +1,139 @@
+<div class="main-content">
+    <div class="row">
+
+        <div class="col-md-8">
+            <div class="card" style="transform: translate3d(0px, 0px, 0px); opacity: 1;">
+                <div class="header">
+                    <h4 class="title">Editar Perfil</h4>
+                </div>
+
+                <div class="content">
+                    {{ form_start(formulario) }}
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label>Organizacion (deshabilitado)</label>
+                                    <input class="form-control" disabled="disabled" placeholder="Company" value="Desaparecidos App Inc." type="text">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    {{ form_label(formulario.nombre, 'Nombre') }}
+                                    {{ form_widget(formulario.nombre, {
+                                        'attr': {
+                                            'placeholder': 'Ingrese su nombre'
+                                        }
+                                    }) }}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <{{ form_label(formulario.apellido, 'Apellido') }}
+                                    {{ form_widget(formulario.apellido, {
+                                        'attr': {
+                                            'placeholder': 'Ingrese su apellido'
+                                        }
+                                    }) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_label(formulario.email, 'Direccion de correo') }}
+                                    {{ form_widget(formulario.email, {
+                                        'attr': {
+                                            'placeholder': 'Ingrese su email'
+                                        }
+                                    }) }}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_label(formulario.cedula, 'Cedula') }}
+                                    {{ form_widget(formulario.cedula, {
+                                        'attr': {
+                                            'placeholder': 'Ingrese su cedula'
+                                        }
+                                    }) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_label(formulario.telefono, 'Telefono') }}
+                                    {{ form_widget(formulario.telefono, {
+                                        'attr': {
+                                            'placeholder': 'Ingrese su telefono'
+                                        }
+                                    }) }}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {{ form_label(formulario.celular, 'Celular') }}
+                                    {{ form_widget(formulario.celular, {
+                                        'attr': {
+                                            'placeholder': 'Ingrese su celular'
+                                        }
+                                    }) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    {{ form_label(formulario.fchNaci, 'Fecha de Nacimiento') }}
+                                    {{ form_widget(formulario.fchNaci, {
+                                        'attr': {
+                                            'placeholder': 'Ingrese su fecha de nacimiento'
+                                        }
+                                    }) }}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Fecha de Ingreso</label>
+                                    <input class="form-control" disabled="disabled" placeholder="Fecha Ingreso" value="{{ app.user.fechaIngreso.format('Y-m-d') }}" type="text">
+                                </div>
+                            </div>
+                        </div>
+
+                        <button id="edit" type="submit" class="btn btn-info btn-fill pull-right" formnovalidate>Actualizar</button>
+                    {{ form_end(formulario) }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-user" style="transform: translate3d(0px, 0px, 0px); opacity: 1;">
+                <div class="image">
+                    <img alt="..." src="{{ asset('images/fondo.jpg') }}">
+                </div>
+                <div class="content">
+                    <div class="author">
+                        <a href="#">
+                            <img alt="..." class="avatar border-gray" src="{{ asset('images/face-1.jpg') }}">
+                            <h4 class="title">{{ app.user.nombre }}<br>
+                                <small>{{ app.user.apellido }}</small>
+                            </h4>
+                        </a>
+                    </div>
+                    <p class="description text-center"> {{ app.user.email }} </p>
+                    <div class="col-md-6 text-center">
+                        <div class="form-group">
+                        {#{{ form_widget(formulario.foto) }}#}
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <button class="btn btn-simple" href="#"><i class="fa fa-facebook-square"></i></button>
+                    <button class="btn btn-simple" href="#"><i class="fa fa-twitter"></i></button>
+                    <button class="btn btn-simple" href="#"><i class="fa fa-google-plus-square"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,148 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <br>
+    <br>
+    <div class="row" id="portada">
+        <div class="col-md-12">
+
+        <img style="width: 101%; height: 550px; margin-top: -39px;" src="images/desaparecidos_full.jpg" data-holder-rendered="true"></div>
+    </div>
+    </div>
+
+    <div class="row" id="pasos_desaparecidos" style="padding-top: 70px; padding-bottom: 0px;">
+        <div class="row "  >
+            <div  class="col-md-12" id="opciones_action" style=" padding-bottom: 80px;">
+
+            <div class="col-lg-offset-1 col-md-4"  >
+
+                <img style="width: 190px;" src="images/registrar.png"  alt="imagen no disponible"/>
+                <div class="col-md-12">
+                    <p>Nuestras organizaciones aliadas le facilitarán la búsqueda de su familiar desaparecido en hospitales, centros de salud y morgues</p>
+                    <button type="button" class="btn btncomodo">REGISTRATE</button>
+                </div>
+
+            </div>
+            <div class="col-md-3" >
+                <img style="width: 190px;" src="images/reporta.png"   alt="imagen no disponible"/>
+                <div class="col-md-12">
+                    <p>Registra tu organización que colabore con la búsqueda de personas desaparecidas </p>
+                    <button type="button" class="btn btnsocial">REGISTRA TU ORGANIZACIÓN</button>
+                </div>
+
+            </div>
+            <div class="col-md-4" >
+                <img style="width: 190px;" src="images/espera.png" alt="imagen no disponible"/>
+
+                <div class="col-md-12">
+                    <p>Desaparecidos solicita datos relacionados la persona</p>
+                    <button type="button" class="btn btnrapido">REPORTA A LA PERSONA DESAPARECIDA</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="organiz_aliadas" style="padding-top: 70px;background: #e9ecee">
+        <div class="col-md-12">
+            <div class=" col-lg-offset-1 col-md-5">
+                <h1>Organizaciones Aliadas</h1>
+                <p>Nuestras organizaciones aliadas le facilitarán la búsqueda de su familiar desaparecido </p>
+                <h3>Centros de Salud </h3>
+                <h3>Hospitales </h3>
+                <h3>Morgue </h3>
+                </div >
+
+            <div class=" col-lg-offset-1 col-md-5">
+                <h1>Trabajo Colaborativo</h1>
+                <p>Nuestras organizaciones aliadas le facilitarán la búsqueda de su familiar desaparecido </p>
+
+
+            </div>
+        </div>
+     </div>
+
+    <div class="row col-md-12"  style="padding-top: 30px; background: #e9ecee; padding-bottom: 80px;">
+        <div class="col-md-offset-5">
+             <button type="button"  class="btn btn-default btn-lg">
+        <span class="glyphicon glyphicon-envelope"></span> Registra tu organización
+        </button>
+        </div>
+
+    </div>
+
+    <div class="row ">
+        <div class="col-md-12" style="padding-top: 50px; padding-bottom: 50px">
+        <div class="col-lg-offset-1 col-md-5">
+                <div class="col-md-10"><h2 class="featurette-heading"> Nuestras Ventajas <br><span class="text-muted"> Pi&eacutenselo ...</span></h2>
+                <p class="lead">Busque a su familiar desaparecido ahorrando tiempo y dinero</p>
+
+            </div>
+        </div>
+        <div class="col-md-5" style="align-content: center">
+            <img class="featurette-image img-responsive center-block animated zoomInLeft"  style=" border-radius: 50px; width: 450px; height: 200px;" data-src="holder.js/500x500/auto" alt="500x500" src="images/ahorra.png" data-holder-rendered="true">
+        </div>
+        </div>
+    </div>
+    <br>
+    <div class="row ">
+    <div class="col-md-12" style="padding-top: 50px; padding-bottom: 50px">
+        <div class="col-lg-offset-1 col-md-5">
+            <div class="col-md-10"><img class="featurette-image img-responsive center-block animated zoomInLeft" style=" border-radius: 50px;" data-src="holder.js/500x500/auto" alt="500x500" src="images/contacto.jpg" data-holder-rendered="true"></div>
+
+        </div>
+        <div class="col-md-5 ">
+            <h2 class="featurette-heading">CONTACTOS DE EMERGENCIA <br><span class="text-muted">Necesita Ayuda? ...</span></h2>
+            <p class="lead">Conoce los n&uacutemeros de tel&eacutefonos y direcciones de nuestras organizaciones</p>
+            <button class="btn btn-primary" id="btnLogin02">Directorio</button>
+        </div>
+    </div>
+    </div>
+
+    <div id="stadistics" class="row">
+        <div class="container text-center">
+            <div class="row">
+                <h1>GR&AacuteFICAS Y PORCENTAJES</h1>
+            </div>
+            <div class="row">
+                <img src="{{ asset('images/grafica.jpg') }}" alt="" style="width: 50%; height: 50%">
+            </div>
+        </div>
+    </div>
+
+    <div id="alianzas" class="row well" style="background: #009a61;">
+        <div class="container text-center">
+            <div class="row">
+                <h1>DESAPARECIDOSAPP</h1>
+            </div>
+            <!--div class="row">
+                <img src="{{ asset('images/grafica.jpg') }}" alt="">
+            </div-->
+            <div class=" row col-md-12">
+                <div class="col-md-6 col-md-offset-1">
+                    <div id="descripc">
+                        <h3><strong>¿Quienes Somos?</strong></h3>
+                        <p><strong>DesaparecidosApp </strong>Es una aplicaci&oacuten que tiene como objetivo principal colaborar en la b&uacutesqueda de personas extraviadas en conjunto con la DINASED, la cual trabaja para la resoluci&oacuten de casos de personas desaparecidos. Nuestra p&aacutegina trabaja mediante
+                            una red de usuarios interconectados entre s&iacute, permitiendole a usted acceder a
+                            informaci&oacuten de personas ingresas dentro de un establecimiento de salud o morgue
+                            que se encuentren sin registro alguno.</p>
+                    </div>
+                </div>
+                <div class="col-md-5 animated infinite pulse">
+                    <div id="empresas" style="text-align: center">
+                        <img src="{{ asset('images/logo_app.png') }}" alt="" style="width: 190px; height: 150px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

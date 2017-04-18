@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+{% block title %}Administrador{% endblock title%}
+{% block body %}
+
+    <div class="container-fluid1">
+    <div class="row col-md-12">
+    <div class="col-sm-3 col-md-3 sidebar">
+        <h3 class="page-header" >{% block titulo %}<span class="glyphicon glyphicon-info-sign"> Informacion</span>{% endblock %}</h3>
+        <ul class="nav nav-sidebar">
+
+            <li class="{% block m1%} {% endblock %}"><a href="{{ path('index') }}"><span class="glyphicon glyphicon-home"> Inicio</span></a></li>
+            <li class="{% block m2%} {% endblock %}"><a href="{{ path('admin_perfil') }}" ><span class="glyphicon glyphicon-user"> Perfil Usuario</span></a></li>
+            <li class="{% block m3%} {% endblock %}"><a href="{{ path('admin_organizacion') }}" ><span class="glyphicon glyphicon-list"> Control Organizaciones</span></a></li>
+        </ul>
+    </div>
+    <h3 class="page-header" >{% block titulo4 %} &nbsp &nbsp &nbsp Editar Perfil de Administrador{% endblock %}</h3>
+
+        <div class="col-sm-9  col-md-3 ">
+            <div class="table-responsive">
+                <table class="table"  style="width:100%;">
+                    <tr>
+                        <span class="glyphicon glyphicon-camera" aria-hidden="true"> Editar Imagen</span>
+                        <br><br>
+                    </tr>
+                    <tr>
+                        <div><center><img src="{{ asset('images/admin.png') }}" alt=""></center></div></td>
+
+                    </tr>
+                    <br>
+                    <tr style="text-align: center">
+                        <td>Juan Carlos Taboada</td>
+
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+
+        </table>
+
+        <div class="col-md-5">
+            <div class="table-responsive">
+                <table class="table" style="width:100%;">
+
+                    <tr>
+                        <td class="success">Nombre:</td>
+                        <td class="active"><input type="text" placeholder=""></td>
+
+                    </tr>
+                    <tr >
+                        <td class="success">Apellido:</td>
+                        <td class="active"><input type="text" placeholder=" "></td>
+                    </tr>
+                    <tr>
+                        <td class="success">Cedula:</td>
+                        <td class="active"><input type="text" placeholder=" "></td>
+                    </tr>
+                    <tr>
+                        <td class="success">Email:</td>
+                        <td class="active"><input type="text" placeholder=""></td>
+
+                    </tr>
+                    <tr>
+                        <td class="success">Usuario:</td>
+                        <td class="active"><input type="text" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <td class="success">Contraseña:</td>
+                        <td class="active"><input type="password" placeholder=""></td>
+                    </tr>
+                    <tr>
+                        <td class="success">Verificar Contraseña:</td>
+                        <td class="active"><input type="password" placeholder=""></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td><button type="button" class="btn btn-info">Editar</button></td>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+{% endblock body %}

@@ -1,0 +1,88 @@
+AppBundle\Entity\Tipo_Org:
+    tipo.org_{1..2}:
+        nombre (unique): <tipoOrg()>
+
+AppBundle\Entity\Organizacion:
+    organiz_{1..16}:
+        nombre (unique): <organiz()>
+        tipo_org: '@tipo.org*'
+        ubicacion (unique): <ubicacion()>
+        telefono (unique): <telefono()>
+        email (unique): <correo()>
+        fecha_ingreso: <dateTimeBetween('-2 months', 'now')>
+        estado: 1
+
+AppBundle\Entity\Admin:
+    admin:
+        nombre: 'Santiago'
+        apellido: 'Casaliglla'
+        cedula: '1712869574'
+        fchNaci: <dateTimeBetween('-18 years', 'now')>
+        telefono: '022784748'
+        celular: '0939527322'
+        roles: ['ROLE_ADMIN']
+        rutafoto: 'admin.png'
+        email: 'admin@gmail.com'
+        plainPassword: 'admin'
+
+AppBundle\Entity\Usuario:
+    familiar_{1..24}:
+        nombre: <firstName()>
+        apellido: <lastName()>
+        cedula (unique): <cedula()>
+        fchNaci: <dateTimeBetween('-3 months', 'now')>
+        telefono (unique): <tlfnuser()>
+        celular (unique): <celluser()>
+        roles: ['ROLE_FAMILIAR']
+        rutafoto: usuario.png
+        email (unique): <email()>
+        plainPassword: familiar
+    encargado_{1..16}:
+        nombre: <firstName()>
+        apellido: <lastName()>
+        cedula (unique): <cedula()>
+        fchNaci: <dateTimeBetween('-3 months', 'now')>
+        telefono (unique): <tlfnuser()>
+        celular (unique): <celluser()>
+        roles: ['ROLE_ENCARGADO']
+        rutafoto: encargado.png
+        email: <email()>
+        plainPassword: encargado
+
+AppBundle\Entity\Rol:
+    rol_{1..2}:
+        nombre (unique): <rol()>
+
+AppBundle\Entity\RolxUsuario:
+    rolXuserEncargado_{1..16}:
+        usuario (unique): '@encargado_*'
+        rol: '@rol_2'
+        organizacion (unique): '@organiz_*'
+    rolXuserFamiliar_{1..24}:
+        usuario (unique): '@familiar_*'
+        rol: '@rol_1'
+
+AppBundle\Entity\Solicitud:
+    solicitud_{1..10}:
+        asunto: <text(20)>
+        descripcion: <sentence()>
+        fecha_ingreso: <dateTimeBetween('-3 months', 'now')>
+        estado: 0
+        usuario: '@familiar_*'
+
+#AppBundle\Entity\Discapacidad:
+#    discapacidad_{1..9}:
+#        nombre (unique): <discapacidad()>
+#        estadoDiscapacidad: 1
+#
+#AppBundle\Entity\Partes_Cuerpo:
+#    partes.cuerpo_{1..37}:
+#       nombre (unique): <partesCuerpo()>
+#       descripcion: <descripcionPartes()>
+#       fecha_ingreso: <dateTimeBetween('-2 months', 'now')>
+#
+#AppBundle\Entity\Rasgos_Dist:
+#    rasgos.distint_{1..4}:
+#        nombre (unique): <rasgosDistintivos()>
+#        descripcion: <descripcionRasgos()>
+#        fecha_ingreso: <dateTimeBetween('-2 months', 'now')>

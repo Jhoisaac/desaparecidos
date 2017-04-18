@@ -1,0 +1,172 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Preguntas Frecuentes{% endblock title%}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/datepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/js/datepicker.min.js') }}"></script>
+
+{% endblock %}
+
+{% block body %}
+
+
+    <div class="container-fluid1">
+        <div class="row">
+            <div class="col-sm-5 col-md-3 sidebar">
+                <div class="col-lg-offset-1 col-md-10 col-lg-offset-3">
+
+
+                    <h3 class="page-header" >{% block titulo %}<span class="glyphicon glyphicon-info-sign"> Información</span>{% endblock %}</h3>
+                    <ul class="nav nav-sidebar">
+                        <li class="{% block m1%} {% endblock %}"><a href="{{ path('user_perfil') }}"><span class="glyphicon glyphicon-user"> Mi Perfil</span></a></li>
+                        <li class="{% block m2%} {% endblock %}"><a href="{{ path('user_edit') }}"><span class="glyphicon glyphicon-user"> Editar Perfil</span></a></li>
+                        <li class="{% block m3%} {% endblock %}"><a href="{{ path('user_listar') }}" ><span class="glyphicon glyphicon-list"> Mis Solicitud</span></a></li>
+                        <li class="{% block m4%} {% endblock %}"><a href="{{ path('user_solicitud') }}" ><span class="glyphicon glyphicon-list"> Nueva Solicitud</span></a></li>
+                        <li class="{% block m5%} {% endblock %}"><a href="{{ path('user_buscar') }}" ><span class="glyphicon glyphicon-search"> Buscar</span></a></li>
+                        <li class="{% block m6%} {% endblock %}"><a href="{{ path('desaparecido_register') }}" ><span class="glyphicon glyphicon-search"> Reportar</span></a></li>
+                        <li class="{% block m7%} {% endblock %}"><a href="{{ path('all_preguntas') }}" ><span class="glyphicon glyphicon-search"> Preguntas Frecuentes </span></a></li>
+                        <li class="{% block m8%} {% endblock %}"><a href="{{ path('all_contactos') }}" ><span class="glyphicon glyphicon-search"> Contactos</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <h2 class="page-header text-center">
+                    <div class="container">
+                        <h2>Preguntas frecuentes</h2>
+                        <p><strong>Desaparecidos:</strong>  Es un sistema de información nacional e interinstitucional que tiene como objetivo orientar la búsqueda de personas desaparecidas  </p>
+                        <div class="col-lg-offset-3 col-md-7">
+                            <div class="panel-group" id="accordion">
+                                <div class="panels">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">¿Desaparecidos es un sitio de encuentros?</a>
+                                            </h3>
+                                        </div>
+                                        <div id="collapse1" class="panel-collapse collapse in">
+                                            <div class="panel-body"><p>NO, Desaparecidos es un sistema donde se registran amigos y familiares
+                                                que han desaparecido</p></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panels">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse2"> ¿Tienen algún costo los servicios de Desaparecidos.com?</a>
+                                            </h3>
+                                        </div>
+                                        <div id="collapse2" class="panel-collapse collapse">
+                                            <div class="panel-body"><p>NO, en lo absoluto, nuestros servicios de búsqueda son completamente gratuitos.
+                                                No hay otra manera de hacer esto si queremos que todo el mundo esté dentro de nuestro sistema.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panels">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">¿Tengo que llenar el formulario de Registro para utilizar el Motor de Búsqueda?</a>
+                                            </h3>
+                                        </div>
+                                        <div id="collapse3" class="panel-collapse collapse">
+                                            <div class="panel-body"><p>SI, porque nuestro sistema depende de los datos proporcionados por
+                                                nuestros usuarios.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panels">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">¿Es peligroso llenar completamente el formulario de Registro?</a>
+                                            </h3>
+                                        </div>
+                                        <div id="collapse4" class="panel-collapse collapse">
+                                            <div class="panel-body"><p>No, porque nunca te preguntamos acerca de tu situación financiera o cualquier otro tipo de información
+                                                comprometedores y confidencial acerca de ti.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panels">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse5"> ¿Necesito ser estudiante universitario o de otro tipo de institución
+                                                    educativa para dar mi información?</a>
+                                            </h3>
+                                        </div>
+                                        <div id="collapse5" class="panel-collapse collapse">
+                                            <div class="panel-body"><p>No, Desaparecidos está creado para estar disponible a todo el mundo.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panels">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">¿Tengo que llenar el formulario de Registro para utilizar el Motor de Búsqueda?</a>
+                                            </h3>
+                                        </div>
+                                        <div id="collapse6" class="panel-collapse collapse">
+                                            <div class="panel-body"><p>SI, porque nuestro sistema depende de los datos proporcionados por
+                                                nuestros usuarios.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panels">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <h3 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">¿Alguna vez me preguntará mi contraseña vía correo electrónico?</a>
+                                            </h3>
+                                        </div>
+                                        <div id="collapse7" class="panel-collapse collapse">
+                                            <div class="panel-body"><p>No, Desaparecidos NUNCA te preguntará tu contraseña por ningún medio,
+                                                ni por correo electrónico, ni por una llamada telefónica, ni por correo tradicional.
+                                                Ten cuidado porque si esto pasa, podrías ser una victima potencial de "Phishing" o "Ingeniería Social".</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--div class="container-fluid1">
+
+                        <nav aria-label="...">
+                            <ul class="pager">
+                                <li><a href="#">Previous</a></li>
+                                <li><a href="#">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div-->
+
+
+                </h2>
+
+            </div>
+
+
+        </div>
+    </div>
+
+{% endblock %}
